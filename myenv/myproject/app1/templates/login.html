@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .login-main-div{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: aliceblue;
+        /* border: 2px solid red; */
+    }
+    .login-border{
+        padding: 6%;
+        /* border: 2px solid rgb(0, 0, 0); */
+        border-radius: 10px;
+        background-color:rgb(189, 210, 227);
+        /* text-align: center; */
+    }
+    input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    }
+    button{
+        width: 100px;
+        height: 30px;
+        background-color: rgb(68, 120, 165);
+        border-radius: 8px;
+    }
+    h2{
+        /* border: 2px solid; */
+        font-family: sans-serif;
+        padding-bottom: 4%;
+        text-align: center;
+    }
+    .btn-div{
+        margin-top: 4%;
+    }
+</style>
+<body>
+    <!-- {% load crispy_forms_tags %} -->
+    <div class="login-main-div">
+        <div class="login-border">
+            <h2>Login</h2>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <div class="btn-div">
+                    <button>Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
